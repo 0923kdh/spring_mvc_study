@@ -29,6 +29,7 @@ public class RequestParamServlet extends HttpServlet {
 
         //request.getParameter() 는 하나의 파라미터 이름에 대해서 단 하나의 값만 있을 때 사용해야 한다.
         //request.getParameter() 를 사용하면 request.getParameterValues() 의 첫 번째 값을 반환한다.
+        //request.getParameter() 는 GET URL 쿼리 파라미터 형식도 지원하고 POST HTML Form 형식도 지원한다.
         System.out.println("[단일 파라미터 조회] - start ");
         String username = request.getParameter("username");
         String age = request.getParameter("age");

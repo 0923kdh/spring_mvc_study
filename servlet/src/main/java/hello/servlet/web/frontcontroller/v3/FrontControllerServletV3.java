@@ -43,11 +43,12 @@ public class FrontControllerServletV3 extends HttpServlet {
 
         //3. Controller 호출
         Map<String, String> paramMap = creatParamMap(request);
-        ModelView mv = controller.process(paramMap);
 
-        //4. Controller는 FrontController한테 viewName 반환
+        //4. Controller는 FrontController한테 ModelView 반환
+        ModelView mv = controller.process(paramMap);
         String viewName = mv.getViewName(); //new-from 같은 논리이름임.
 
+        //5. FrontController가 viewResolver 호출
         //6. viewResolver가 FrontController한테 MyView 반환
         MyView view = viewResolver(viewName);
 
@@ -57,7 +58,6 @@ public class FrontControllerServletV3 extends HttpServlet {
 
     private MyView viewResolver(String viewName) {
 
-        //5. FrontController가 viewResolver 호출
         return new MyView("/WEB-INF/views/" + viewName + ".jsp");
 
     }

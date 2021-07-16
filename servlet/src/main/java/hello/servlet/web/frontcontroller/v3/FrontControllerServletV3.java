@@ -42,7 +42,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         }
 
         //3. Controller 호출
-        Map<String, String> paramMap = creatParamMap(request);
+        Map<String, String> paramMap = createParamMap(request);
 
         //4. Controller는 FrontController한테 ModelView 반환
         ModelView mv = controller.process(paramMap);
@@ -62,7 +62,7 @@ public class FrontControllerServletV3 extends HttpServlet {
 
     }
 
-    private Map<String, String> creatParamMap(HttpServletRequest request) {
+    private Map<String, String> createParamMap(HttpServletRequest request) {
 
         Map<String, String> paramMap = new HashMap<>();
         request.getParameterNames().asIterator()

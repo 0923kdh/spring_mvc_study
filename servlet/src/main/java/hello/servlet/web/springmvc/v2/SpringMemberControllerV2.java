@@ -33,7 +33,7 @@ public class SpringMemberControllerV2 {
     //클래스 레벨의 @RequestMapping + 메세드 레벨의 @RequestMapping 정보가 더해짐.
     // /springmvc/v2/members 와 같음.
     @RequestMapping
-    public ModelAndView save() {
+    public ModelAndView members() {
 
         List<Member> members = memberRepository.findAll();
 
@@ -47,7 +47,7 @@ public class SpringMemberControllerV2 {
     //클래스 레벨의 @RequestMapping + 메세드 레벨의 @RequestMapping 정보가 더해짐.
     // /springmvc/v2/members/save 와 같음.
     @RequestMapping("/save")
-    public ModelAndView members(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView save(HttpServletRequest request, HttpServletResponse response) {
 
         String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
